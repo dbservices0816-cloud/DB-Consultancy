@@ -125,7 +125,7 @@ const Contact = () => {
             <p><strong>Email:</strong>dbservices0816@gmail.com</p>
             <p><strong>Phone:</strong> 
 +91 90132 03030</p>
-            <p><strong>Office:</strong> New Delhi / Gurugram</p>
+            <p><strong>Office:</strong> New Delhi </p>
           </div>
 
           <div className="mt-8 w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
