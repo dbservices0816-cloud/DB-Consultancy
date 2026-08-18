@@ -122,7 +122,7 @@ const Contact = () => {
           </p>
 
           <div className="space-y-3 text-gray-700 text-sm">
-            <p><strong>Email:</strong>dbservices0816@gmail.com</p>
+            <p><strong>Email:</strong> dbservices0816@gmail.com</p>
             <p><strong>Phone:</strong> 
 +91 90132 03030</p>
             <p><strong>Office:</strong> New Delhi </p>
