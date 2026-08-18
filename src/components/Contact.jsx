@@ -18,7 +18,7 @@ const Contact = () => {
     e.preventDefault();
 
     if (!form.name || !form.email || !form.service) {
-      toast.error("Please fill required fields"); // 🔥 REPLACED alert
+      toast.error("Please fill required fields"); // 🔥 REP
       return;
     }
 
