@@ -118,7 +118,7 @@ const Contact = () => {
           </h2>
 
           <p className="text-gray-600 mb-4">
-            Serving clients globally with a base in the New Delhi / Noida / Gurugram region.
+            Serving clients globally with a base in the New Delhi office. Reach out to us for any inquiries or support.
           </p>
 
           <div className="space-y-3 text-gray-700 text-sm">
