@@ -1,8 +1,12 @@
-// Consultants.jsx — Ultra Premium Fully Responsive UI (375px / 425px / Tablet / Desktop)
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  BriefcaseBusiness,
+  GraduationCap,
+  ShieldCheck,
+} from "lucide-react";
 
 import jagdish from "../assets/jagdish-raheja.jpeg";
 import parmanand from "../assets/parmanand-goyal.jpeg";
@@ -20,6 +24,7 @@ const consultantsData = [
       "Regulatory pricing, tariff determination (AERA/CERC), and strategic contract negotiations.",
     qualifications:
       "FCMA, MSc Finance (Strathclyde, UK), MTech (IT), Qualified Independent Director.",
+    featured: true,
   },
 
   {
@@ -51,183 +56,312 @@ const consultantsData = [
 
 const Consultants = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8fafc] py-14 sm:py-16 lg:py-24">
-      
-      {/* Background Blur Effects */}
-      <div className="absolute top-0 left-0 w-40 h-40 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-red-100 rounded-full blur-3xl opacity-30"></div>
+    <main className="bg-[#f7f8fa] text-slate-900">
 
-      <div className="absolute bottom-0 right-0 w-40 h-40 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-slate-200 rounded-full blur-3xl opacity-30"></div>
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#07111f] px-6 py-20 text-white sm:py-24 lg:py-28">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Heading */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-red-600 text-[10px] min-[375px]:text-[11px] sm:text-xs md:text-sm font-bold tracking-[2px] uppercase">
-            Elite Consulting Team
-          </span>
+        {/* Background Glow */}
+        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
 
-          <h2 className="mt-5 sm:mt-6 text-[30px] leading-[38px] min-[375px]:text-[34px] min-[375px]:leading-[42px] sm:text-5xl lg:text-6xl font-black text-slate-900">
+        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl" />
+
+        {/* Grid Pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
+            backgroundSize: "50px 50px",
+          }}
+        />
+
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+
+          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[2px] text-yellow-300">
+            <Award size={14} />
+            Leadership & Expertise
+          </div>
+
+          <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Meet Our
-            <span className="text-red-600"> Consultants</span>
-          </h2>
+            <span className="block text-yellow-400">
+              Consulting Experts
+            </span>
+          </h1>
 
-          <div className="w-16 sm:w-24 h-1 bg-red-600 rounded-full mx-auto mt-4 sm:mt-6"></div>
+          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-yellow-400" />
 
-          <p className="mt-5 sm:mt-6 max-w-3xl mx-auto text-slate-600 text-[14px] sm:text-base lg:text-lg leading-7 px-1 sm:px-0">
-            Experienced industry leaders delivering excellence in strategic
-            advisory, corporate finance, infrastructure, telecom, and business
-            transformation.
+          <p className="mx-auto mt-7 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+            Experienced industry leaders delivering strategic advisory,
+            corporate finance, cost management, valuation and business
+            transformation solutions.
           </p>
-        </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          
-          {consultantsData.map((consultant) => (
-            <div
-              key={consultant.id}
-              className="group relative bg-white rounded-[24px] sm:rounded-[32px] overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-4"
-            >
-              
-              {/* Image Section */}
-              <div className="relative overflow-hidden">
-                
-                <div className="relative h-[260px] min-[375px]:h-[300px] min-[425px]:h-[340px] sm:h-[420px] lg:h-[460px] overflow-hidden">
-                  
-                  {/* Image */}
+        </div>
+      </section>
+
+      {/* =====================================================
+          CONSULTANTS
+      ===================================================== */}
+      <section className="relative px-5 py-16 sm:px-6 sm:py-20 lg:py-24">
+
+        <div className="mx-auto max-w-7xl">
+
+          {/* Section Header */}
+          <div className="mb-12 flex flex-col justify-between gap-5 sm:mb-16 md:flex-row md:items-end">
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[3px] text-blue-600 sm:text-sm">
+                Our Leadership
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
+                Experienced Minds.
+                <span className="text-blue-600"> Strategic Results.</span>
+              </h2>
+            </div>
+
+            <p className="max-w-md text-sm leading-6 text-slate-500">
+              Our consultants bring decades of experience across government,
+              finance, infrastructure, energy and corporate sectors.
+            </p>
+
+          </div>
+
+          {/* Cards */}
+          <div className="grid gap-7 lg:grid-cols-3">
+
+            {consultantsData.map((consultant) => (
+              <article
+                key={consultant.id}
+                className={`group relative overflow-hidden rounded-[28px] border bg-white transition-all duration-500 hover:-translate-y-2 ${
+                  consultant.featured
+                    ? "border-yellow-400/60 shadow-xl shadow-yellow-500/10 lg:-translate-y-4"
+                    : "border-slate-200 shadow-lg shadow-slate-200/60"
+                }`}
+              >
+
+                {/* Featured Label */}
+                {consultant.featured && (
+                  <div className="absolute left-5 top-5 z-20 flex items-center gap-2 rounded-full bg-yellow-400 px-4 py-2 text-xs font-bold text-slate-950 shadow-lg">
+                    <Award size={14} />
+                    Founder
+                  </div>
+                )}
+
+                {/* Image */}
+                <div className="relative h-[380px] overflow-hidden sm:h-[430px]">
+
                   <img
                     src={consultant.image}
                     alt={consultant.name}
-                    className="
-                      w-full 
-                      h-full 
-                      object-cover 
-                      object-top 
-                      transition-all 
-                      duration-700 
-                      group-hover:scale-110
-                    "
+                    loading={consultant.id === 1 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
                   />
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                  {/* Image Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111f] via-[#07111f]/20 to-transparent" />
 
-                  {/* Badge */}
-                  <div className="absolute top-3 left-3 sm:top-5 sm:left-5">
-                    <span
-                      className="
-                        bg-white/20 
-                        backdrop-blur-md 
-                        border 
-                        border-white/20 
-                        text-white 
-                        text-[9px] 
-                        min-[375px]:text-[10px]
-                        sm:text-xs 
-                        px-3 
-                        py-1.5 
-                        rounded-full 
-                        font-semibold 
-                        tracking-wide
-                      "
-                    >
-                      Senior Consultant
-                    </span>
-                  </div>
+                  {/* Image Bottom Info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
 
-                  {/* Bottom Info */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                    
-                    <p
-                      className="
-                        text-red-300 
-                        uppercase 
-                        tracking-[2px] 
-                        text-[9px] 
-                        min-[375px]:text-[10px]
-                        sm:text-xs 
-                        font-bold 
-                        mb-2
-                      "
-                    >
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[2px] text-yellow-400 sm:text-xs">
                       {consultant.designation}
                     </p>
 
-                    <h3
-                      className="
-                        text-white 
-                        text-[22px] 
-                        leading-[28px]
-                        min-[375px]:text-[24px]
-                        min-[375px]:leading-[30px]
-                        sm:text-3xl 
-                        font-bold
-                      "
-                    >
+                    <h3 className="text-2xl font-bold text-white sm:text-3xl">
                       {consultant.name}
                     </h3>
+
                   </div>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-4 sm:p-6 lg:p-7">
-                
-                {/* Background */}
-                <div className="mb-4 sm:mb-5">
-                  <h4 className="text-[16px] sm:text-lg font-bold text-slate-900 mb-2">
-                    Background
-                  </h4>
+                {/* Content */}
+                <div className="p-6 sm:p-7">
 
-                  <p className="text-slate-600 text-[13px] sm:text-sm leading-6">
-                    {consultant.background}
-                  </p>
+                  {/* Background */}
+                  <div className="border-b border-slate-100 pb-6">
+
+                    <div className="mb-3 flex items-center gap-3">
+
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                        <BriefcaseBusiness size={17} />
+                      </div>
+
+                      <h4 className="font-bold text-slate-900">
+                        Background
+                      </h4>
+
+                    </div>
+
+                    <p className="text-sm leading-6 text-slate-500">
+                      {consultant.background}
+                    </p>
+
+                  </div>
+
+                  {/* Expertise */}
+                  <div className="border-b border-slate-100 py-6">
+
+                    <div className="mb-3 flex items-center gap-3">
+
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-yellow-50 text-yellow-600">
+                        <ShieldCheck size={17} />
+                      </div>
+
+                      <h4 className="font-bold text-slate-900">
+                        Expertise
+                      </h4>
+
+                    </div>
+
+                    <p className="text-sm leading-6 text-slate-500">
+                      {consultant.expertise}
+                    </p>
+
+                  </div>
+
+                  {/* Qualifications */}
+                  <div className="py-6">
+
+                    <div className="mb-3 flex items-center gap-3">
+
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                        <GraduationCap size={18} />
+                      </div>
+
+                      <h4 className="font-bold text-slate-900">
+                        Qualifications
+                      </h4>
+
+                    </div>
+
+                    <p className="text-sm leading-6 text-slate-500">
+                      {consultant.qualifications}
+                    </p>
+
+                  </div>
+
+                  {/* Button */}
+                  <Link
+                    to="/contact"
+                    className="group/button flex w-full items-center justify-center gap-2 rounded-xl bg-[#07111f] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-600"
+                  >
+                    Connect With Consultant
+
+                    <ArrowRight
+                      size={17}
+                      className="transition-transform duration-300 group-hover/button:translate-x-1"
+                    />
+                  </Link>
+
                 </div>
 
-                {/* Expertise */}
-                <div className="mb-4 sm:mb-5">
-                  <h4 className="text-[16px] sm:text-lg font-bold text-slate-900 mb-2">
-                    Expertise
-                  </h4>
+                {/* Hover Border */}
+                <div className="pointer-events-none absolute inset-0 rounded-[28px] border border-transparent transition-all duration-500 group-hover:border-blue-500/30" />
 
-                  <p className="text-slate-600 text-[13px] sm:text-sm leading-6">
-                    {consultant.expertise}
-                  </p>
-                </div>
+              </article>
+            ))}
 
-                {/* Qualifications */}
-                <div className="mb-6">
-                  <h4 className="text-[16px] sm:text-lg font-bold text-slate-900 mb-2">
-                    Qualifications
-                  </h4>
-
-                  <p className="text-slate-600 text-[13px] sm:text-sm leading-6">
-                    {consultant.qualifications}
-                  </p>
-                </div>
-
-                {/* Button */}
-                <Link
-                  to="/contact"
-                  className="group/btn flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-red-600 text-white py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-[13px] sm:text-sm tracking-wide transition-all duration-300"
-                >
-                  Connect With Consultant
-
-                  <ArrowRight
-                    size={18}
-                    className="group-hover/btn translate-x-1 transition duration-300"
-                  />
-                </Link>
-              </div>
-
-              {/* Premium Hover Border */}
-              <div className="absolute inset-0 rounded-[24px] sm:rounded-[32px] border border-transparent group-hover:border-yellow-400/80 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.35)] transition-all duration-500 pointer-events-none"></div>
-            </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* =====================================================
+          TRUST SECTION
+      ===================================================== */}
+      <section className="border-y border-slate-200 bg-white px-6 py-16 sm:py-20">
+
+        <div className="mx-auto max-w-6xl">
+
+          <div className="grid gap-6 md:grid-cols-3">
+
+            {[
+              {
+                number: "35+",
+                title: "Years of Experience",
+                text: "Deep government and private-sector leadership experience.",
+              },
+              {
+                number: "3",
+                title: "Senior Consultants",
+                text: "Specialists across finance, costing, valuation and strategy.",
+              },
+              {
+                number: "360°",
+                title: "Advisory Approach",
+                text: "Integrated solutions designed around your business goals.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg"
+              >
+
+                <div className="text-4xl font-black text-blue-600">
+                  {item.number}
+                </div>
+
+                <h3 className="mt-3 font-bold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  {item.text}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+      <section className="px-5 py-16 sm:px-6 sm:py-20">
+
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] bg-[#07111f] px-6 py-14 text-center text-white shadow-2xl sm:px-10 sm:py-16">
+
+          {/* Glow */}
+          <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-blue-600/20 blur-3xl" />
+
+          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-yellow-500/10 blur-3xl" />
+
+          <div className="relative z-10">
+
+            <p className="text-xs font-bold uppercase tracking-[3px] text-yellow-400">
+              Work With Our Experts
+            </p>
+
+            <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold sm:text-4xl">
+              Ready to Make Better
+              <span className="text-yellow-400"> Business Decisions?</span>
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+              Connect with our consultants and explore tailored advisory
+              solutions for your organization.
+            </p>
+
+            <Link
+              to="/contact"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-7 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-yellow-500/20 transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
+            >
+              Schedule a Consultation
+              <ArrowRight size={17} />
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
   );
 };
 
