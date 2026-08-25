@@ -65,6 +65,7 @@ export default function AddProfessionalForm() {
               className="w-full border rounded-lg px-3 py-2"
             />
           </div>
+          
 
           {/* Profession */}
           <div>
