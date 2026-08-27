@@ -88,20 +88,20 @@
 // checkevenodd(88);
 
 
-// function maxnum (arr){
-//     let max = arr[0];
-//     for(let i=1; i<arr.length; i++){
-//         if(arr[i] > max){
-//             max = arr[i];
+function maxnum (arr){
+    let max = arr[0];
+    for(let i=1; i<arr.length; i++){
+        if(arr[i] > max){
+            max = arr[i];
 
-//         }
-//     }
-//     return max;
-// }
+        }
+    }
+    return max;
+}
 
 
-// var arr = [25,50,75,400];
-// console.log(maxnum(arr));
+var arr = [25,50,75,400];
+console.log(maxnum(arr));
 
 
 
