@@ -109,17 +109,17 @@
 // Write a function that takes an array of numbers and returns how many positive numbers are present in the array.
 
 
-function countpositive(arr){
-    let count = 0;
-    for(let i=0; i<arr.length; i++){
-        if(arr[i] > 0){
-            count++;
-        }
-    }
+// function countpositive(arr){
+//     let count = 0;
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i] > 0){
+//             count++;
+//         }
+//     }
  
-   console.log("Number of positive numbers:");
+//    console.log("Number of positive numbers:");
    
-}
+// }
 
 
 // let arr = [1, -2, 3, 4, -5]
