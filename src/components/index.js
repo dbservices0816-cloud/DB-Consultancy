@@ -19,3 +19,8 @@
 // twoSum([2, 7, 11, 15], 9);
 
 // console.log(twoSum);
+
+
+
+// Valid Parentheses — Check whether brackets (), {}, [] are properly balanced.
+// Topic: Stack
