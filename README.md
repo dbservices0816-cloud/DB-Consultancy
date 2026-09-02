@@ -161,12 +161,3 @@ We combine **Cost Accountancy, Finance, and Technology** to deliver strategic bu
 
 
 
----
-
-## Built With ❤️
-
-**Developed by Himanshu Gupta**
-
-🔗 GitHub: https://github.com/Himanshu-Gupta0007
-
-Thank you for visiting the project!
