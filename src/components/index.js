@@ -69,18 +69,3 @@
 //     }
 // }
 
-// function reverseList(head) {
-//     let prev = null;
-//     let curr = head;
-
-//     while (curr !== null) {
-//         let next = curr.next; // next node save karo
-
-//         curr.next = prev;     // pointer reverse karo
-
-//         prev = curr;          // prev ko aage move karo
-//         curr = next;          // curr ko aage move karo
-//     }
-
-//     return prev;
-// }
