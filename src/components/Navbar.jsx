@@ -1,160 +1,153 @@
+
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import DBC from "../assets/DBC.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
 
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "About Us", path: "/about" },
-    { name: "Consultants", path: "/consultants" },
-    { name: "Compliance", path: "/compliance" },
-    { name: "Contact", path: "/contact" },
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "services" },
+    { name: "Heritage", href: "heritage" },
+    { name: "Impact & Cases", href: "impact" },
+    { name: "Leadership", href: "leadership" },
+    { name: "Audit Tool", href: "calculator" },
+    { name: "Compliance Portal", href: "compliance" },
+    
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#111315]/95 text-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl">
-      <div className="mx-auto flex h-[82px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
-        {/* ================= LOGO ================= */}
-        <Link
-          to="/"
-          onClick={() => setMenuOpen(false)}
-          className="group flex items-center"
-        >
-          <div className="flex items-center gap-2">
-            <img
-              src={DBC}
-              alt="DB Consultancy"
-                className="h-20 w-auto object-contain"
-            />
-          </div>
-        </Link>
+    <header className="sticky top-0 z-50 w-full border-b border-[#C5A880]/30 bg-[#0F2C59] text-white shadow-lg">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
 
-        {/* ================= DESKTOP NAV ================= */}
-        <div className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`relative rounded-lg px-3.5 py-2.5 text-sm font-medium transition-all duration-200 ${
-                isActive(item.path)
-                  ? "bg-white/10 text-white"
-                  : "text-gray-400 hover:bg-white/5 hover:text-white"
-              }`}
-            >
-              {item.name}
-
-              {/* Active indicator */}
-              {isActive(item.path) && (
-                <span className="absolute bottom-0 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-amber-400" />
-              )}
-            </Link>
-          ))}
-        </div>
-
-        {/* ================= DESKTOP CTA ================= */}
-        <Link
-          to="/contact"
-          className="hidden items-center gap-2 rounded-xl bg-amber-400 px-5 py-3 text-sm font-bold text-gray-900 shadow-[0_5px_20px_rgba(251,191,36,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-300 hover:shadow-[0_8px_25px_rgba(251,191,36,0.2)] lg:inline-flex"
-        >
-          Get Consultation
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+          {/* ================= LOGO ================= */}
+          <a
+            href="/"
+            onClick={handleLinkClick}
+            className="flex items-center gap-3"
           >
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </Link>
+            {/* DB Logo */}
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[#C5A880] text-xl font-bold text-[#0F2C59] shadow">
+              DB
+            </div>
 
-        {/* ================= MOBILE BUTTON ================= */}
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-300 transition hover:bg-white/10 hover:text-white lg:hidden"
-        >
-          {menuOpen ? (
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
+            {/* Brand */}
+            <div>
+              <span className="block text-lg font-bold leading-none tracking-wider text-white sm:text-xl">
+                DB CONSULTANCY
+              </span>
+
+              <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.18em] text-[#C5A880] sm:text-xs">
+                Strategic Cost Management
+              </span>
+            </div>
+          </a>
+
+          {/* ================= DESKTOP NAV ================= */}
+          <nav className="hidden items-center gap-5 text-sm font-medium lg:flex xl:gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="whitespace-nowrap py-2 text-slate-200 transition-colors duration-200 hover:text-[#C5A880]"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* ================= DESKTOP CTA ================= */}
+          <div className="hidden lg:flex">
+            <a
+              href="/contact"
+              className="rounded bg-[#C5A880] px-4 py-2.5 text-sm font-semibold text-[#0F2C59] shadow transition-all duration-200 hover:bg-[#B08E59]"
             >
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          ) : (
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          )}
-        </button>
+              Schedule Audit
+            </a>
+          </div>
+
+          {/* ================= MOBILE BUTTON ================= */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded text-slate-200 transition hover:text-[#C5A880] lg:hidden"
+            aria-label="Toggle Navigation"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              /* X Icon */
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              /* Hamburger Icon */
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* ================= MOBILE MENU ================= */}
-      <div
-        className={`overflow-hidden border-t border-white/10 bg-[#17191c] transition-all duration-300 lg:hidden ${
-          menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-8">
-          <div className="space-y-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMenuOpen(false)}
-                className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-medium transition ${
-                  isActive(item.path)
-                    ? "bg-white/10 text-white"
-                    : "text-gray-400 hover:bg-white/5 hover:text-white"
-                }`}
+      {menuOpen && (
+        <div className="border-t border-[#C5A880]/20 bg-[#0A192F] lg:hidden">
+          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+
+            <nav className="flex flex-col">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className="border-b border-slate-700/50 py-3.5 text-sm font-medium text-slate-200 transition-colors duration-200 hover:text-[#C5A880]"
+                >
+                  {link.name}
+                </a>
+              ))}
+
+              {/* Mobile CTA */}
+              <a
+                href="/contact"
+                onClick={handleLinkClick}
+                className="mt-4 block rounded bg-[#C5A880] px-4 py-3 text-center text-sm font-semibold text-[#0F2C59] transition-colors duration-200 hover:bg-[#B08E59]"
               >
-                <span>{item.name}</span>
+                Schedule Strategic Audit
+              </a>
+            </nav>
 
-                {isActive(item.path) && (
-                  <span className="h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,.8)]" />
-                )}
-              </Link>
-            ))}
           </div>
-
-          {/* Mobile CTA */}
-          <Link
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-amber-400 px-5 py-3.5 text-sm font-bold text-gray-900 transition hover:bg-amber-300"
-          >
-            Get Consultation
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </Link>
         </div>
-      </div>
-    </nav>
+      )}
+    </header>
   );
 };
 
 export default Navbar;
+

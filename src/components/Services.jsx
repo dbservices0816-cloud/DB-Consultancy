@@ -1,450 +1,235 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  BarChart3,
-  BriefcaseBusiness,
-  Calculator,
-  CheckCircle2,
-  FileSearch,
-  Handshake,
-  Landmark,
-  Scale,
-  TrendingUp,
-  Users,
-} from "lucide-react";
 
-/* =========================================================
-   SERVICE CARD
-========================================================= */
-
-const ServiceCard = ({ service, index }) => {
-  const Icon = service.icon;
-
-  return (
-    <div className="group relative h-full overflow-hidden rounded-[28px] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-100/60 sm:p-8">
-
-      {/* Hover Glow */}
-      <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-blue-100/50 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
-
-      {/* Number */}
-      <span className="absolute right-7 top-6 text-5xl font-black text-slate-100 transition duration-500 group-hover:text-blue-50">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-
-      {/* Icon */}
-      <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all duration-500 group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-600/25">
-        <Icon size={25} strokeWidth={1.8} />
-      </div>
-
-      {/* Title */}
-      <h3 className="relative mt-7 pr-8 text-xl font-bold leading-snug text-slate-900 transition-colors duration-300 group-hover:text-blue-700 sm:text-2xl">
-        {service.title}
-      </h3>
-
-      {/* Small Line */}
-      <div className="mt-4 h-1 w-10 rounded-full bg-yellow-400 transition-all duration-500 group-hover:w-16" />
-
-      {/* Services List */}
-      <ul className="relative mt-6 space-y-3.5">
-        {service.items.map((item, idx) => (
-          <li
-            key={idx}
-            className="flex items-start gap-3 text-sm leading-6 text-slate-600"
-          >
-            <CheckCircle2
-              size={17}
-              className="mt-1 shrink-0 text-blue-600"
-            />
-
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Bottom Link */}
-      <Link
-        to="/contact"
-        className="relative mt-7 inline-flex items-center gap-2 text-sm font-bold text-slate-800 transition-colors duration-300 group-hover:text-blue-600"
-      >
-        Discuss This Service
-
-        <ArrowRight
-          size={17}
-          className="transition-transform duration-300 group-hover:translate-x-1"
-        />
-      </Link>
-
-      {/* Premium Bottom Border */}
-      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-600 to-yellow-400 transition-all duration-500 group-hover:w-full" />
-    </div>
-  );
-};
-
-/* =========================================================
-   SERVICES PAGE
-========================================================= */
+import React, { useState } from "react";
 
 const Services = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+
   const services = [
     {
-      title: "Project Management",
-      icon: BriefcaseBusiness,
-      items: [
-        "Review and estimation of project cost",
-        "Project Management reporting framework",
-        "Time and cost overrun control & review",
-        "Cost analysis support in project execution",
-      ],
+      category: "cat1",
+      categoryName: "Category I",
+      title: "Project Cost Estimation",
+      description:
+        "Techno-economic feasibility studies, detailed capital budgeting models, and executive management reporting frameworks for complex infrastructure.",
+      focus: "Focus: Feasibility & Planning",
     },
     {
-      title: "Cost & Pricing",
-      icon: Calculator,
-      items: [
-        "Design & review of cost accounting systems",
-        "Cost analysis for profitability improvement",
-        "Product pricing strategy",
-        "Cost reduction processes",
-        "Cost audit & compliance review",
-        "Cost-benefit analysis",
-      ],
+      category: "cat1",
+      categoryName: "Category I",
+      title: "Overrun Control & Mitigation",
+      description:
+        "Real-time financial and timeline tracking mechanisms designed to isolate variance root causes and eliminate cost escalations before deployment.",
+      focus: "Focus: Risk & Time Control",
     },
     {
-      title: "Procurement Advisory",
-      icon: Handshake,
-      items: [
-        "Cost-effective procurement strategies",
-        "Procurement of non-competitive products",
-        "Make-or-Buy decision advisory",
-      ],
+      category: "cat1",
+      categoryName: "Category I",
+      title: "System Design & Cost Accounting",
+      description:
+        "Architecting custom process-cost accounting frameworks for complex manufacturing and process industries to capture accurate cost drivers.",
+      focus: "Focus: Enterprise Systems",
     },
     {
-      title: "Reporting & Pricing Support",
-      icon: BarChart3,
-      items: [
-        "Price-controlled product & service cost analysis",
-        "Strategic planning and pricing support",
-        "Industry advisory for reputed organizations",
-      ],
+      category: "cat2",
+      categoryName: "Category II",
+      title: "Profitability Optimization",
+      description:
+        "Driving corporate margin expansion through systematic cost reduction audits, waste elimination, and detailed operational variance analysis.",
+      focus: "Focus: Margin Expansion",
     },
     {
-      title: "Mergers & Acquisitions",
-      icon: TrendingUp,
-      items: [
-        "Establishing M&A frameworks",
-        "Assessment of merger & acquisition benefits",
-        "Cost-benefit analysis for M&A decisions",
-      ],
+      category: "cat2",
+      categoryName: "Category II",
+      title: "Strategic Procurement Audit",
+      description:
+        "Non-competitive product pricing verification, direct vendor audit, and comprehensive Make-or-Buy capital asset support.",
+      focus: "Focus: Vendor & Pricing Audit",
     },
     {
-      title: "Valuation Services",
-      icon: Scale,
-      items: [
-        "Valuation of assets & liabilities",
-        "Going concern valuation",
-        "Liquidation value assessment",
-        "Registered valuer services",
-        "360° business review & growth planning",
-      ],
+      category: "cat2",
+      categoryName: "Category II",
+      title: "Pricing Strategy & Norms",
+      description:
+        "Price control product/service cost analysis, regulatory tariff submissions, and long-term dynamic pricing model development.",
+      focus: "Focus: Regulatory Pricing",
     },
     {
-      title: "Insolvency & Bankruptcy",
-      icon: Landmark,
-      items: [
-        "Asset takeover & business restructuring support",
-        "Support to buyers and sellers in insolvency process",
-        "Advisory services to banks and stakeholders",
-      ],
+      category: "cat3",
+      categoryName: "Category III",
+      title: "M&A Advisory & Due Diligence",
+      description:
+        "M&A financial cost-benefit assessment, post-merger integration reviews, target synergy evaluation, and financial due diligence.",
+      focus: "Focus: Deal Synergy",
     },
     {
-      title: "Fractional CFO Services",
-      icon: Users,
-      items: [
-        "Fractional CFO support for startups & enterprises",
-        "Interim CFO for vacancies or transitions",
-        "Management accounting & financial leadership",
-        "Support for special projects and bulk assignments",
-      ],
+      category: "cat3",
+      categoryName: "Category III",
+      title: "IBBI Certified Valuations",
+      description:
+        "IBBI Registered Valuations for Securities & Financial Assets (SFA), going concern appraisal, liquidation value, and statutory compliance.",
+      focus: "Focus: Statutory Valuation",
+    },
+    {
+      category: "cat3",
+      categoryName: "Category III",
+      title: "Fractional CFO & Insolvency Advisory",
+      description:
+        "Strategic financial leadership for high-growth enterprises, specialized bulk assignments, and IBC resolution professional advisory.",
+      focus: "Focus: Executive Governance",
     },
   ];
 
+  const filteredServices =
+    activeCategory === "all"
+      ? services
+      : services.filter((service) => service.category === activeCategory);
+
   return (
-    <main className="bg-[#f7f8fa] text-slate-900">
+    <section
+      id="services"
+      className="border-b border-slate-200 bg-white py-20"
+    >
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+        {/* ================= SECTION HEADER ================= */}
+        <div className="mx-auto mb-12 max-w-3xl text-center">
 
-      <section className="relative min-h-[590px] overflow-hidden bg-[#07111f]">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#B08E59]">
+            Expert Advisory Verticals
+          </span>
 
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <div
-            className="h-full w-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=70&w=1800&auto=format&fit=crop&fm=webp')",
-            }}
-          />
+          <h2 className="mt-2 text-3xl font-extrabold text-[#0F2C59] sm:text-4xl">
+            Our Core Service Matrix
+          </h2>
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-[#07111f]/80" />
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+            Explore our specialized cost accounting, regulatory valuation,
+            and project governance services. Use the filters below to browse
+            our capability catalog across corporate life cycles.
+          </p>
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07111f] via-[#07111f]/70 to-transparent" />
         </div>
 
-        {/* Decorative Glow */}
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
+        {/* ================= FILTER BUTTONS ================= */}
+        <div className="mb-10 flex justify-center">
+          <div className="flex w-full max-w-4xl flex-wrap justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 p-2">
 
-        <div className="absolute -bottom-32 right-20 h-80 w-80 rounded-full bg-yellow-500/10 blur-3xl" />
+            {/* All */}
+            <button
+              onClick={() => setActiveCategory("all")}
+              className={`rounded-lg px-4 py-2.5 text-xs font-semibold transition-all duration-200 sm:text-sm ${
+                activeCategory === "all"
+                  ? "bg-[#0F2C59] text-white shadow"
+                  : "text-slate-600 hover:text-[#0F2C59]"
+              }`}
+            >
+              All Services
+            </button>
 
-        {/* Content */}
-        <div className="relative z-10 mx-auto flex min-h-[590px] max-w-7xl items-center px-6 py-24 lg:px-8">
+            {/* Category I */}
+            <button
+              onClick={() => setActiveCategory("cat1")}
+              className={`rounded-lg px-4 py-2.5 text-xs font-semibold transition-all duration-200 sm:text-sm ${
+                activeCategory === "cat1"
+                  ? "bg-[#0F2C59] text-white shadow"
+                  : "text-slate-600 hover:text-[#0F2C59]"
+              }`}
+            >
+              Cat I: Project Control
+            </button>
 
-          <div className="max-w-4xl">
+            {/* Category II */}
+            <button
+              onClick={() => setActiveCategory("cat2")}
+              className={`rounded-lg px-4 py-2.5 text-xs font-semibold transition-all duration-200 sm:text-sm ${
+                activeCategory === "cat2"
+                  ? "bg-[#0F2C59] text-white shadow"
+                  : "text-slate-600 hover:text-[#0F2C59]"
+              }`}
+            >
+              Cat II: Operational Cost
+            </button>
 
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[2px] text-yellow-300">
-              <BarChart3 size={14} />
-              Strategic Business Solutions
-            </div>
-
-            {/* Heading */}
-            <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Our
-              <span className="text-blue-400"> Services</span>
-            </h1>
-
-            <div className="mt-6 h-1 w-20 rounded-full bg-yellow-400" />
-
-            {/* Description */}
-            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Delivering structured, data-driven solutions across project
-              management, cost optimization, valuation and strategic advisory
-              to help businesses make better decisions.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-9 flex flex-wrap gap-4">
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-7 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-yellow-500/20 transition hover:-translate-y-1 hover:bg-yellow-300"
-              >
-                Discuss Your Requirement
-                <ArrowRight size={17} />
-              </Link>
-
-              <Link
-                to="/consultants"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
-              >
-                Meet Our Experts
-              </Link>
-
-            </div>
+            {/* Category III */}
+            <button
+              onClick={() => setActiveCategory("cat3")}
+              className={`rounded-lg px-4 py-2.5 text-xs font-semibold transition-all duration-200 sm:text-sm ${
+                activeCategory === "cat3"
+                  ? "bg-[#0F2C59] text-white shadow"
+                  : "text-slate-600 hover:text-[#0F2C59]"
+              }`}
+            >
+              Cat III: Strategy & Valuation
+            </button>
 
           </div>
         </div>
-      </section>
 
-      {/* =====================================================
-          INTRO STRIP
-      ===================================================== */}
+        {/* ================= SERVICES GRID ================= */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-      <section className="relative z-20 -mt-8 px-5 sm:px-6">
-
-        <div className="mx-auto grid max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-300/30 md:grid-cols-3">
-
-          {[
-            {
-              title: "Strategic",
-              text: "Business-focused advisory",
-            },
-            {
-              title: "Data Driven",
-              text: "Insights backed by analysis",
-            },
-            {
-              title: "End-to-End",
-              text: "Solutions from strategy to execution",
-            },
-          ].map((item, index) => (
+          {filteredServices.map((service, index) => (
             <div
-              key={item.title}
-              className={`px-6 py-7 text-center ${
-                index !== 2
-                  ? "border-b border-slate-200 md:border-b-0 md:border-r"
-                  : ""
-              }`}
+              key={index}
+              className="group rounded-xl border border-slate-200 bg-[#F8FAFC] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C5A880] hover:shadow-lg"
             >
-              <h3 className="text-lg font-bold text-slate-900">
-                {item.title}
+
+              {/* Category Badge */}
+              <div
+                className={`mb-4 inline-block rounded px-3 py-1 text-xs font-bold ${
+                  service.category === "cat1"
+                    ? "bg-[#0F2C59]/10 text-[#0F2C59]"
+                    : service.category === "cat2"
+                    ? "bg-[#C5A880]/20 text-[#B08E59]"
+                    : "bg-slate-200 text-slate-700"
+                }`}
+              >
+                {service.categoryName}
+              </div>
+
+              {/* Title */}
+              <h3 className="mb-3 text-xl font-bold text-[#0F2C59] transition-colors group-hover:text-[#B08E59]">
+                {service.title}
               </h3>
 
-              <p className="mt-1 text-sm text-slate-500">
-                {item.text}
+              {/* Description */}
+              <p className="min-h-[96px] text-sm leading-relaxed text-slate-600">
+                {service.description}
               </p>
+
+              {/* Focus */}
+              <div className="mt-6 border-t border-slate-200 pt-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#B08E59]">
+                  {service.focus}
+                </span>
+              </div>
+
             </div>
           ))}
 
         </div>
-      </section>
 
-      {/* =====================================================
-          SERVICES
-      ===================================================== */}
+        {/* ================= BOTTOM CTA ================= */}
+        <div className="mt-14 text-center">
 
-      <section className="px-6 py-20 sm:py-24 lg:py-28">
+          <p className="mb-4 text-sm text-slate-600">
+            Need a customized advisory solution for your organization?
+          </p>
 
-        <div className="mx-auto max-w-7xl">
+          <a
+            href="/contact"
+            className="inline-flex items-center rounded bg-[#C5A880] px-6 py-3 text-sm font-bold text-[#0F2C59] shadow transition-all duration-200 hover:bg-[#B08E59]"
+          >
+            Schedule Strategic Consultation
+            <span className="ml-2">→</span>
+          </a>
 
-          {/* Header */}
-          <div className="mx-auto max-w-3xl text-center">
-
-            <span className="text-xs font-bold uppercase tracking-[3px] text-blue-600">
-              What We Do
-            </span>
-
-            <h2 className="mt-4 text-3xl font-black text-slate-900 sm:text-4xl md:text-5xl">
-              Our Services Expertise
-            </h2>
-
-            <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-yellow-400" />
-
-            <p className="mt-5 text-sm leading-7 text-slate-500 sm:text-base">
-              Comprehensive financial, cost and strategic advisory services
-              designed to create measurable business value.
-            </p>
-
-          </div>
-
-          {/* Cards */}
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-
-            {services.map((service, index) => (
-              <ServiceCard
-                key={service.title}
-                service={service}
-                index={index}
-              />
-            ))}
-
-          </div>
         </div>
-      </section>
 
-      {/* =====================================================
-          WHY OUR SERVICES
-      ===================================================== */}
-
-      <section className="bg-[#07111f] px-6 py-20 text-white sm:py-24">
-
-        <div className="mx-auto max-w-6xl">
-
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-
-            {/* Left */}
-            <div>
-
-              <span className="text-xs font-bold uppercase tracking-[3px] text-yellow-400">
-                Why DB Consultancy
-              </span>
-
-              <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
-                Expertise That
-                <span className="block text-blue-400">
-                  Creates Business Value
-                </span>
-              </h2>
-
-              <div className="mt-6 h-1 w-16 rounded-full bg-yellow-400" />
-
-              <p className="mt-6 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
-                Our multidisciplinary approach brings together cost
-                accountancy, finance, technology and strategic thinking to
-                help organizations solve complex business challenges.
-              </p>
-
-            </div>
-
-            {/* Right */}
-            <div className="grid gap-4 sm:grid-cols-2">
-
-              {[
-                "Cost Optimization",
-                "Financial Advisory",
-                "Strategic Planning",
-                "Regulatory Support",
-                "Business Valuation",
-                "CFO Advisory",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur transition hover:border-blue-400/40 hover:bg-white/10"
-                >
-                  <CheckCircle2
-                    size={19}
-                    className="shrink-0 text-blue-400"
-                  />
-
-                  <span className="text-sm font-semibold text-slate-200">
-                    {item}
-                  </span>
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          CTA
-      ===================================================== */}
-
-      <section className="px-5 py-16 sm:px-6 sm:py-20">
-
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[30px] bg-gradient-to-br from-blue-700 to-[#07111f] px-6 py-14 text-center text-white shadow-2xl sm:px-10 sm:py-16">
-
-          {/* Glow */}
-          <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl" />
-
-          <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-yellow-400/10 blur-3xl" />
-
-          <div className="relative z-10">
-
-            <span className="text-xs font-bold uppercase tracking-[3px] text-yellow-300">
-              Let's Work Together
-            </span>
-
-            <h3 className="mx-auto mt-4 max-w-3xl text-3xl font-black sm:text-4xl">
-              Need Expert
-              <span className="text-yellow-400">
-                {" "}Financial Guidance?
-              </span>
-            </h3>
-
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-              Let's discuss how DB Consultancy can support your business
-              objectives with practical, strategic and measurable solutions.
-            </p>
-
-            <Link
-              to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-bold text-blue-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-yellow-400 hover:text-slate-950"
-            >
-              Contact Our Experts
-              <ArrowRight size={18} />
-            </Link>
-
-          </div>
-        </div>
-      </section>
-
-    </main>
+      </div>
+    </section>
   );
 };
 
 export default Services;
+
