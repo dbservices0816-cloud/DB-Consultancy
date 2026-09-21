@@ -36,7 +36,7 @@ return ( <section
    className="border-b border-slate-200 bg-slate-900 py-20"
  > <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-```
+
     {/* Header */}
     <div className="mx-auto mb-12 max-w-3xl text-center">
       <span className="text-xs font-bold uppercase tracking-widest text-yellow-500">
@@ -228,7 +228,7 @@ return ( <section
 
           {/* CTA */}
           <a
-            href="#contact"
+            href="/contact"
             className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-slate-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
           >
             Request Detailed Audit Strategy
