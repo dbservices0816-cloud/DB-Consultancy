@@ -57,7 +57,7 @@ return ( <div className="bg-slate-50 text-slate-900">
       </span>
 
       <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-        Schedule a Strategic Audit
+        Schedule & Audit Review
       </h1>
 
       <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
@@ -107,12 +107,12 @@ return ( <div className="bg-slate-50 text-slate-900">
                   </p>
 
                   <p className="mt-2 leading-6 text-slate-200">
-                    E-87, Anand Niketan, New Delhi
+                  UKG-11,5
+Bhikaji Cama Place somdutt chamber
+New Delhi - 110066
                   </p>
 
-                  <p className="mt-1 text-sm text-slate-400">
-                    Sector 77, Noida | Gurugram
-                  </p>
+                 
                 </div>
 
               </div>
@@ -165,18 +165,13 @@ return ( <div className="bg-slate-50 text-slate-900">
 
                 <div className="mt-1 space-y-1">
                   <a
-                    href="tel:+919868203636"
+                    href="tel:+919013203030"
                     className="block font-medium text-slate-200 transition hover:text-yellow-500"
                   >
-                    +91 9868203636
+                    +91 90132 03030
                   </a>
 
-                  <a
-                    href="tel:+919999642490"
-                    className="block font-medium text-slate-200 transition hover:text-yellow-500"
-                  >
-                    +91 9999642490
-                  </a>
+                  
                 </div>
               </div>
 
@@ -197,17 +192,17 @@ return ( <div className="bg-slate-50 text-slate-900">
                 <div className="mt-1 space-y-1">
 
                   <a
-                    href="mailto:dc.bajaj@yahoo.com"
+                    href="mailto:dbservices0816@gmail.com"
                     className="block break-all font-medium text-slate-200 transition hover:text-yellow-500"
                   >
-                    dc.bajaj@yahoo.com
+                    dbservices0816@gmail.com
                   </a>
 
                   <a
-                    href="mailto:jagdishlalraheja@outlook.com"
+                    href="mailto:office@icmaconsulting.com"
                     className="block break-all font-medium text-slate-200 transition hover:text-yellow-500"
                   >
-                    jagdishlalraheja@outlook.com
+                    office@icmaconsulting.com
                   </a>
 
                 </div>

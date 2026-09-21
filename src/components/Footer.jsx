@@ -30,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-slate-400">
               <li>Project Cost Control</li>
               <li>Operational Profitability</li>
-              <li>IBBI Valuations (SFA)</li>
+              <li>IBBI Registered Valuations (SFA)</li>
               <li>Insolvency & Restructuring</li>
             </ul>
           </div>

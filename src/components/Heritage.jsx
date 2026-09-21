@@ -5,7 +5,7 @@ const Heritage = () => {
   const milestones = [
     {
       year: "30+ Years",
-      title: "Government Fiscal Authority",
+      title: "Government Cost and Pricing Authority",
       description:
         "Extensive institutional experience in government fiscal advisory, cost management, and financial governance.",
     },

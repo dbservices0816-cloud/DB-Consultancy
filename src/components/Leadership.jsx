@@ -15,11 +15,14 @@ const Leadership = () => {
         "CPFA (UK)",
         "MSc Finance (Strathclyde)",
         "MTech (IT)",
+        "AI Skilled"
       ],
       points: [
         "Former Chief Adviser (Cost), Ministry of Finance (Secretary / HAG+ Level)",
-        "Former Member, Airports Economic Regulatory Authority (AERA)",
+        "Pharmaceuticals & Healthcare , Higher Education , Project Construction ,Infrastructure & Development  (Retd)",
+       
         "Former President, Institute of Cost Accountants of India (ICAI)",
+         "Former Member, Airports Economic Regulatory Authority (AERA)",
         "Specialist in Regulatory Tariff Pricing & Defence Procurements",
       ],
     },
@@ -95,7 +98,7 @@ const Leadership = () => {
 
                 {/* Profile Image */}
                 <div className="mb-5 flex justify-center">
-                  <div className="h-28 w-28 overflow-hidden rounded-full border-4 border-yellow-500 bg-slate-100 shadow-md">
+                  <div className="h-40 w-40 overflow-hidden rounded-none border-4 border-yellow-500 bg-slate-100 shadow-md">
                     <img
                       src={consultant.image}
                       alt={consultant.name}
@@ -143,7 +146,7 @@ const Leadership = () => {
               {/* CTA */}
               <div className="border-t border-slate-200 p-6">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex items-center text-sm font-bold text-slate-900 transition hover:text-yellow-600"
                 >
                   Consult with {consultant.name}

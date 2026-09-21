@@ -8,9 +8,9 @@ const Services = () => {
     {
       category: "cat1",
       categoryName: "Category I",
-      title: "Project Cost Estimation",
+      title: "Project Cost Review & Feasibility",
       description:
-        "Techno-economic feasibility studies, detailed capital budgeting models, and executive management reporting frameworks for complex infrastructure.",
+        " Techno-Economic feasibility studies,  Detailed capital budgeting models, and Management reporting frameworks for complex infrastructure.",
       focus: "Focus: Feasibility & Planning",
     },
     {

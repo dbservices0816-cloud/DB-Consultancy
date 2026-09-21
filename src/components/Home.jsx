@@ -47,14 +47,14 @@ const Home = () => {
               <div className="flex flex-col gap-4 pt-2 sm:flex-row">
 
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="rounded bg-[#C5A880] px-6 py-3.5 text-center font-bold text-[#0F2C59] shadow-lg transition-all duration-200 hover:bg-[#B08E59]"
                 >
-                  Schedule Strategic Audit
+                  Schedule Strategic Consultation
                 </a>
 
                 <a
-                  href="#services"
+                  href="/services"
                   className="rounded border border-slate-600 bg-transparent px-6 py-3.5 text-center font-semibold text-slate-200 transition-all duration-200 hover:border-[#C5A880] hover:bg-[#112240] hover:text-[#C5A880]"
                 >
                   Explore Core Verticals
@@ -112,72 +112,59 @@ const Home = () => {
                 <div className="mt-2 h-px w-16 bg-[#C5A880]" />
               </div>
 
+              
               {/* Pillar 01 */}
-              <div className="rounded-lg border border-slate-700 bg-[#112240]/80 p-5 transition-all duration-200 hover:border-[#C5A880] hover:shadow-lg">
-                <div className="flex items-start gap-4">
-
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[#C5A880]/20 text-sm font-bold text-[#C5A880]">
-                    01
-                  </div>
-
-                  <div>
-                    <h4 className="text-base font-bold text-white">
-                      Project Management & Control
-                    </h4>
-
-                    <p className="mt-2 text-xs leading-relaxed text-slate-300 sm:text-sm">
-                      Cost estimation models, real-time overrun control
-                      frameworks, and process accounting system reviews.
-                    </p>
-                  </div>
-
-                </div>
-              </div>
+<div className="group rounded-lg border border-slate-700 bg-[#112240]/80 p-5 transition-all duration-200 hover:border-[#C5A880] hover:bg-[#112240] hover:shadow-lg hover:shadow-[#C5A880]/10">
+  <div className="flex items-start gap-4">
+    <div className="flex h-9 w-9 flex-none items-center justify-center rounded bg-[#C5A880]/20 text-sm font-bold leading-none text-[#C5A880] transition-colors duration-200 group-hover:bg-[#C5A880]/30">
+      01
+    </div>
+    <div className="flex-1">
+      <h4 className="text-base font-bold leading-snug text-white">
+        Project Management &amp; Control
+      </h4>
+      <p className="mt-1.5 text-xs leading-relaxed text-slate-300 sm:text-sm">
+        - Cost estimation models,<p> - Real-time overrun control frameworks,</p>  <span> - Process accounting system reviews.</span>
+      </p>
+    </div>
+  </div>
+</div>
 
               {/* Pillar 02 */}
               <div className="rounded-lg border border-slate-700 bg-[#112240]/80 p-5 transition-all duration-200 hover:border-[#C5A880] hover:shadow-lg">
                 <div className="flex items-start gap-4">
-
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[#C5A880]/20 text-sm font-bold text-[#C5A880]">
                     02
                   </div>
-
                   <div>
                     <h4 className="text-base font-bold text-white">
                       Operational Cost Analysis
                     </h4>
-
                     <p className="mt-2 text-xs leading-relaxed text-slate-300 sm:text-sm">
-                      Profitability optimization, strategic procurement audit,
-                      make-or-buy decisions, and contract verification.
+                      - Profitability optimization, <p> - Strategic procurement audit</p> <p> - Make-or-buy decisions, and</p><span> - Contract verification.</span>
                     </p>
                   </div>
-
                 </div>
               </div>
 
               {/* Pillar 03 */}
               <div className="rounded-lg border border-slate-700 bg-[#112240]/80 p-5 transition-all duration-200 hover:border-[#C5A880] hover:shadow-lg">
                 <div className="flex items-start gap-4">
-
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[#C5A880]/20 text-sm font-bold text-[#C5A880]">
                     03
                   </div>
-
                   <div>
                     <h4 className="text-base font-bold text-white">
-                      Corporate Strategy & Valuation
+                      Corporate Strategy &amp; Valuation
                     </h4>
-
                     <p className="mt-2 text-xs leading-relaxed text-slate-300 sm:text-sm">
-                      M&A cost-benefit analysis, IBBI registered asset
-                      valuations, IBC insolvency advisory, and Fractional CFO
-                      leadership.
+                     <p> - M&amp;A cost-benefit analysis,</p><p> - IBBI registered asset valuations,</p> <p> - IBC insolvency advisory, and </p><p> - Fractional CFO leadership. <p> - Mangement Accountant Support</p></p>
                     </p>
                   </div>
-
                 </div>
               </div>
+
+
 
               {/* Bottom Accent */}
               <div className="pt-2">

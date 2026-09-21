@@ -10,7 +10,7 @@ const Navbar = () => {
     { name: "Heritage", href: "heritage" },
     { name: "Impact & Cases", href: "impact" },
     { name: "Leadership", href: "leadership" },
-    { name: "Audit Tool", href: "calculator" },
+    { name: "Audit Review", href: "calculator" },
     { name: "Compliance Portal", href: "compliance" },
     
   ];
@@ -48,7 +48,7 @@ const Navbar = () => {
           </a>
 
           {/* ================= DESKTOP NAV ================= */}
-          <nav className="hidden items-center gap-5 text-sm font-medium lg:flex xl:gap-6">
+          <nav className="hidden items-center gap-5 text-base font-bold lg:flex xl:gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}

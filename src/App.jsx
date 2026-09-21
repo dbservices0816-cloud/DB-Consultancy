@@ -25,17 +25,8 @@ import Impact from "./components/Impact";
 import Leadership from "./components/Leadership";
 import Audit from "./components/Audit";
 
-// Admin
-import AdminLogin from "./admin/AdminLogin";
-import AdminDashboard from "./admin/AdminDashboard";
-import ProtectedAdminRoute from "./admin/ProtectedAdminRoute";
-
-
 const AppContent = () => {
   const location = useLocation();
-
-  // Hide Navbar and Footer on all admin pages
-  const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
     <>
@@ -48,10 +39,26 @@ const AppContent = () => {
       />
 
       {/* Navbar */}
-      {!isAdminPage && <Navbar />}
+      <Navbar />
+      {/* <Home />
+      <Services />
+      <Heritage />
+      <Impact />
+      <Leadership />
+      <Audit />
+      
+    
+      <Compliance />
+      <Contact /> */}
+      
+      
+     
+      
 
       {/* Routes */}
+     
       <Routes>
+        
 
         {/* ================= USER ROUTES ================= */}
 
@@ -80,34 +87,13 @@ const AppContent = () => {
           element={<AddProfessionalForm />}
         />
 
-
-        {/* ================= ADMIN LOGIN ================= */}
-
-        <Route
-          path="/admin-login"
-          element={<AdminLogin />}
-        />
-
-
-        {/* ================= ADMIN DASHBOARD ================= */}
-
-        <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedAdminRoute>
-              <AdminDashboard />
-            </ProtectedAdminRoute>
-          }
-        />
-
       </Routes>
 
       {/* Footer */}
-      {!isAdminPage && <Footer />}
+      <Footer />
     </>
   );
 };
-
 
 const App = () => {
   return (
@@ -118,6 +104,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
 
 export default App;
