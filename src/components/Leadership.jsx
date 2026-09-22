@@ -98,7 +98,7 @@ const Leadership = () => {
 
                 {/* Profile Image */}
                 <div className="mb-5 flex justify-center">
-                  <div className="h-40 w-40 overflow-hidden rounded-none border-4 border-yellow-500 bg-slate-100 shadow-md">
+                  <div className="h-50 w-40 overflow-hidden rounded-none border-4 border-yellow-500 bg-slate-100 shadow-md">
                     <img
                       src={consultant.image}
                       alt={consultant.name}
