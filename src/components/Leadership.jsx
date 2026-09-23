@@ -62,6 +62,69 @@ const Leadership = () => {
         "Specialist in US GAAP / IGAAP Reporting & Corporate Strategy",
       ],
     },
+    {
+
+  image: "https://shreaprofessionals.com/resource/About/Shrea_Management/Image/Narender.jpg",
+  name: "CMA Narender Kumar Bhola",
+  role: "Strategic Advisor – Corporate Law & IBC",
+  qualifications: [
+    "B.Com (Hons.)",
+    "LL.B.",
+    "FCMA",
+    "Associate Diploma in General Insurance"
+  ],
+  points: [
+    "Former Technical Member, National Company Law Tribunal (NCLT), Hyderabad & New Delhi",
+    "Former Director General, Corporate Affairs, Ministry of Corporate Affairs",
+    "20+ Years of Experience in Corporate Law, Inspections, Investigations & Company Administration",
+    "3 Years of Judicial Experience in Corporate Law & Insolvency and Bankruptcy Law",
+    "6+ Years of Experience in Corporate Fraud Investigations",
+    "Former Registrar of Companies with 5+ Years of Experience",
+    "Expertise in Insolvency & Bankruptcy Code (IBC), Corporate Liquidation, Mergers & Amalgamations",
+    "Experienced in Companies Act, 2013 / Companies Act, 1956 and Corporate Law Matters"
+  ]
+},
+{
+  image: "https://shreaprofessionals.com/resource/About/Shrea_Management/Image/Jai-Kishan-Teotia1.jpg",
+  name: "FCMAFCS IP Jai Kishan Teotia",
+  role: "Strategic Advisor – Forensic Audit & Insolvency",
+  qualifications: [
+    "CS",
+    "ICWA",
+    "B.Tech",
+    "FCMA",
+    "FCS",
+    "Insolvency Professional (IP)"
+  ],
+  points: [
+    "40+ Years of Diverse Experience in Forensic Audits, Serious Fraud Investigation, Cost Evaluation & Cost Strategy Planning",
+    "Expertise in Finance Management, Cost Optimization & Financial Evaluation",
+    "Former Additional Director – Forensic Audit, Ministry of Corporate Affairs, Serious Fraud Investigation Office (SFIO)",
+    "Worked for 7 Years as Additional Director – Forensic Audit at SFIO",
+    "Head of the Satyam Case Investigation at SFIO",
+    "Qualified Insolvency Professional"
+  ]
+},
+{
+  image: "https://dprasad.in/assets/deepika-prasad-Ec7LS7Qu.jpg",
+  name: "CMA. Deepika Bhugra Prasad",
+  role: "Founder & Managing Partner",
+  qualifications: [
+    "Cost Accountant",
+    "Insolvency Professional",
+    "CMA"
+  ],
+  points: [
+    "Founder & Managing Partner at D Prasad Advisory LLP",
+    "25+ Years of Professional Experience in Cost & Management Accounting and Insolvency",
+    "Recognised as a leading woman Insolvency Professional in India",
+    "Resolution Professional appointed by the Hon'ble NCLT",
+    "Experience across complex Corporate Insolvency Resolution Process (CIRP) assignments",
+    "Contributed to the World Bank's Ease of Doing Business Project",
+    "Experience in Forensic Data Analysis for the National Investigation Agency (NIA), Government of India",
+    "Operates across Delhi and Gurgaon"
+  ]
+},
   ];
 
   return (
