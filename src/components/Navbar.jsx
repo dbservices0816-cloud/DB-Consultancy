@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import DBC from "..//assets/DBC.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
     { name: "Leadership", href: "leadership" },
     { name: "Audit Review", href: "calculator" },
     { name: "Compliance Portal", href: "compliance" },
-    
+
   ];
 
   const handleLinkClick = () => {
@@ -31,9 +32,7 @@ const Navbar = () => {
             className="flex items-center gap-3"
           >
             {/* DB Logo */}
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[#C5A880] text-xl font-bold text-[#0F2C59] shadow">
-              DB
-            </div>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center"> <img src={DBC} alt="DB Consultancy Logo" className="h-10 w-10 object-contain" /> </div>
 
             {/* Brand */}
             <div>
