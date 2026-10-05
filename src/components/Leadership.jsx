@@ -108,7 +108,7 @@ const Leadership = () => {
     {
       image: "https://dprasad.in/assets/deepika-prasad-Ec7LS7Qu.jpg",
       name: "CMA. Deepika Bhugra Prasad",
-      role: "Founder & Managing Partner",
+       role: "Recognised as a leading woman Insolvency Professional in India",
       qualifications: [
         "Cost Accountant",
         "Insolvency Professional",
