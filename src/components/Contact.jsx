@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -17,15 +18,43 @@ const Contact = () => {
     });
   };
 
+  // WhatsApp Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.email || !form.service || !form.message) {
+    if (!form.name.trim() || !form.email.trim() || !form.service || !form.message.trim()) {
       toast.error("Please fill all required fields");
       return;
     }
 
-    toast.success("Your consultation request has been submitted!");
+    const whatsappNumber = "919013203030";
+
+    const whatsappMessage = `
+*NEW CONSULTATION REQUEST*
+*iCMA Consulting*
+
+━━━━━━━━━━━━━━━━━━
+
+*Full Name:* ${form.name}
+*Email:* ${form.email}
+*Service Required:* ${form.service}
+*Preferred Consultant:* ${form.consultant || "Any Principal Adviser"}
+
+*Project Overview:*
+${form.message}
+
+━━━━━━━━━━━━━━━━━━
+*Submitted via iCMA Consulting Website*
+`;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+
+    toast.success("Opening WhatsApp...");
 
     setForm({
       name: "",
@@ -65,14 +94,18 @@ const Contact = () => {
       {/* ================= MAIN CONTACT ================= */}
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-5">
+
           {/* ================= CONTACT INFORMATION ================= */}
           <div className="lg:col-span-2">
             <div className="h-full rounded-3xl border border-slate-200 bg-white p-7 text-slate-900 shadow-xl md:p-9">
+
               <span className="text-sm font-semibold uppercase tracking-wider text-yellow-600">
                 Direct Engagement
               </span>
 
-              <h2 className="mt-3 text-3xl font-bold">Office Locations</h2>
+              <h2 className="mt-3 text-3xl font-bold">
+                Office Locations
+              </h2>
 
               <p className="mt-4 leading-7 text-slate-500">
                 Connect with our senior advisers through our domestic offices
@@ -81,6 +114,7 @@ const Contact = () => {
 
               {/* Office Locations */}
               <div className="mt-9 space-y-4">
+
                 {/* Head Office */}
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:bg-slate-100">
                   <div className="flex items-start gap-4">
@@ -119,10 +153,12 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
+
               </div>
 
               {/* Direct Phone & Email */}
               <div className="mt-8 border-t border-slate-200 pt-8">
+
                 <h3 className="text-lg font-bold text-slate-900">
                   Direct Phone & Email
                 </h3>
@@ -135,17 +171,17 @@ const Contact = () => {
 
                   <div>
                     <p className="text-xs uppercase tracking-wider text-slate-400">
-                      Phone
+                      Phone / WhatsApp
                     </p>
 
-                    <div className="mt-1 space-y-1">
-                      <a
-                        href="tel:+919013203030"
-                        className="block font-medium text-slate-700 transition hover:text-yellow-600"
-                      >
-                        +91 90132 03030
-                      </a>
-                    </div>
+                    <a
+                      href="https://wa.me/919013203030"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 block font-medium text-slate-700 transition hover:text-yellow-600"
+                    >
+                      +91 90132 03030
+                    </a>
                   </div>
                 </div>
 
@@ -177,6 +213,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
+
               </div>
 
               {/* Response Time SLA */}
@@ -194,12 +231,14 @@ const Contact = () => {
                   directly by a Senior Consultant within 24 business hours.
                 </p>
               </div>
+
             </div>
           </div>
 
           {/* ================= FORM ================= */}
           <div className="lg:col-span-3">
             <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/50 md:p-10">
+
               {/* Form Header */}
               <div className="mb-8">
                 <span className="text-sm font-semibold uppercase tracking-wider text-yellow-600">
@@ -217,8 +256,10 @@ const Contact = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+
                 {/* Full Name + Email */}
                 <div className="grid gap-5 md:grid-cols-2">
+
                   {/* Full Name */}
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">
@@ -231,6 +272,7 @@ const Contact = () => {
                       placeholder="Enter your full name"
                       value={form.name}
                       onChange={handleChange}
+                      required
                       className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-yellow-500 focus:bg-white focus:ring-4 focus:ring-yellow-500/10"
                     />
                   </div>
@@ -247,13 +289,16 @@ const Contact = () => {
                       placeholder="you@company.com"
                       value={form.email}
                       onChange={handleChange}
+                      required
                       className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-yellow-500 focus:bg-white focus:ring-4 focus:ring-yellow-500/10"
                     />
                   </div>
+
                 </div>
 
                 {/* Service + Consultant */}
                 <div className="grid gap-5 md:grid-cols-2">
+
                   {/* Service */}
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">
@@ -265,6 +310,7 @@ const Contact = () => {
                       name="service"
                       value={form.service}
                       onChange={handleChange}
+                      required
                       className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-700 outline-none transition focus:border-yellow-500 focus:bg-white focus:ring-4 focus:ring-yellow-500/10"
                     >
                       <option value="">-- Select Primary Service --</option>
@@ -296,6 +342,7 @@ const Contact = () => {
                       <option>Jagdish Lal Raheja (Ex-Group CFO)</option>
                     </select>
                   </div>
+
                 </div>
 
                 {/* Project Overview */}
@@ -311,6 +358,7 @@ const Contact = () => {
                     placeholder="Please describe your project, business requirements, audit scope, or valuation needs..."
                     value={form.message}
                     onChange={handleChange}
+                    required
                     className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-yellow-500 focus:bg-white focus:ring-4 focus:ring-yellow-500/10"
                   />
                 </div>
@@ -329,19 +377,25 @@ const Contact = () => {
 
                 <p className="text-center text-xs text-slate-400">
                   Your information is kept confidential and secure.
+                  <br />
+                  You will be redirected to WhatsApp to send your inquiry.
                 </p>
+
               </form>
             </div>
           </div>
+
         </div>
       </section>
 
       {/* ================= BOTTOM CTA ================= */}
       <section className="relative overflow-hidden bg-yellow-500 px-6 py-20 text-center text-slate-950">
+
         <div className="absolute -left-20 top-0 h-64 w-64 rounded-full bg-white/20 blur-3xl" />
         <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-slate-900/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-3xl">
+
           <span className="text-sm font-semibold uppercase tracking-widest text-slate-700">
             Direct Senior Advisory Access
           </span>
@@ -357,12 +411,15 @@ const Contact = () => {
           </p>
 
           <a
-            href="/contact"
+            href="https://wa.me/919013203030"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-xl bg-slate-950 px-8 py-4 font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-slate-800"
           >
             Schedule Consultation
             <span className="ml-2 text-yellow-500">→</span>
           </a>
+
         </div>
       </section>
     </div>

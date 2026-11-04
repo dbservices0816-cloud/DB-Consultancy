@@ -1,19 +1,19 @@
 
 import React, { useState } from "react";
-import DBC from "..//assets/DBC.svg";
+import { Link } from "react-router-dom";
+import DBC from "../assets/DBC.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "services" },
-    { name: "Heritage", href: "heritage" },
-    { name: "Impact & Cases", href: "impact" },
-    { name: "Leadership", href: "leadership" },
-    { name: "Audit Review", href: "calculator" },
-    { name: "Compliance Portal", href: "compliance" },
-
+    { name: "Home", to: "/" },
+    { name: "Services", to: "/services" },
+    { name: "Heritage", to: "/heritage" },
+    { name: "Impact & Cases", to: "/impact" },
+    { name: "Leadership", to: "/leadership" },
+    { name: "Audit Review", to: "/calculator" },
+    { name: "Compliance Portal", to: "/compliance" },
   ];
 
   const handleLinkClick = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
 
-          {/* ================= LOGO ================= */}
+            {/* ================= LOGO ================= */}
           <a
             href="/"
             onClick={handleLinkClick}
@@ -46,30 +46,30 @@ const Navbar = () => {
             </div>
           </a>
 
-          {/* ================= DESKTOP NAV ================= */}
+          {/* DESKTOP NAV */}
           <nav className="hidden items-center gap-5 text-base font-bold lg:flex xl:gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.to}
                 className="whitespace-nowrap py-2 text-slate-200 transition-colors duration-200 hover:text-[#C5A880]"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          {/* ================= DESKTOP CTA ================= */}
+          {/* DESKTOP CTA */}
           <div className="hidden lg:flex">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="rounded bg-[#C5A880] px-4 py-2.5 text-sm font-semibold text-[#0F2C59] shadow transition-all duration-200 hover:bg-[#B08E59]"
             >
               Schedule Audit
-            </a>
+            </Link>
           </div>
 
-          {/* ================= MOBILE BUTTON ================= */}
+          {/* MOBILE BUTTON */}
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -78,7 +78,6 @@ const Navbar = () => {
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              /* X Icon */
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 w-7"
@@ -94,7 +93,6 @@ const Navbar = () => {
                 />
               </svg>
             ) : (
-              /* Hamburger Icon */
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 w-7"
@@ -114,33 +112,31 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* MOBILE MENU */}
       {menuOpen && (
         <div className="border-t border-[#C5A880]/20 bg-[#0A192F] lg:hidden">
           <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-
             <nav className="flex flex-col">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.to}
                   onClick={handleLinkClick}
                   className="border-b border-slate-700/50 py-3.5 text-sm font-medium text-slate-200 transition-colors duration-200 hover:text-[#C5A880]"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
 
-              {/* Mobile CTA */}
-              <a
-                href="/contact"
+              {/* MOBILE CTA */}
+              <Link
+                to="/contact"
                 onClick={handleLinkClick}
                 className="mt-4 block rounded bg-[#C5A880] px-4 py-3 text-center text-sm font-semibold text-[#0F2C59] transition-colors duration-200 hover:bg-[#B08E59]"
               >
                 Schedule Strategic Audit
-              </a>
+              </Link>
             </nav>
-
           </div>
         </div>
       )}
@@ -149,4 +145,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

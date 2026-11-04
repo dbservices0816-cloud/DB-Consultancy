@@ -3,6 +3,8 @@ import React from "react";
 import DINESH from "../assets/dinesh-bajaj.jpeg";
 import Parmanand from "../assets/parmanand-goyal.jpeg";
 import Jagdish from "../assets/jagdish-raheja.jpeg";
+import NK from "../assets/NK.png";
+import IP from "../assets/IP.png";
 
 const Leadership = () => {
   const consultants = [
@@ -64,7 +66,7 @@ const Leadership = () => {
     },
     {
 
-      image: "https://shreaprofessionals.com/resource/About/Shrea_Management/Image/Narender.jpg",
+      image: NK,
       name: "CMA Narender Kumar Bhola",
       role: "Strategic Advisor – Corporate Law & IBC",
       qualifications: [
@@ -85,7 +87,7 @@ const Leadership = () => {
       ]
     },
     {
-      image: "https://shreaprofessionals.com/resource/About/Shrea_Management/Image/Jai-Kishan-Teotia1.jpg",
+      image: IP,
       name: "FCMAFCS IP Jai Kishan Teotia",
       role: "Strategic Advisor – Forensic Audit & Insolvency",
       qualifications: [

@@ -88,6 +88,7 @@ const AppContent = () => {
         />
 
       </Routes>
+      
 
       {/* Footer */}
       <Footer />
