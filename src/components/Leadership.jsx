@@ -70,7 +70,7 @@ const Leadership = () => {
     {
       image: NK,
       name: "CMA Narender Kumar Bhola",
-      role: "Strategic Advisor – Corporate Law & IBC",
+      role: "Former Technical Member",
       qualifications: [
         "B.Com (Hons.)",
         "LL.B.",
@@ -113,7 +113,7 @@ const Leadership = () => {
 
     {
       image: "https://dprasad.in/assets/deepika-prasad-Ec7LS7Qu.jpg",
-      name: "CMA. Deepika Bhugra Prasad",
+      name: "CMA Deepika Bhugra Prasad",
       role: "Recognised as a leading woman Insolvency Professional in India",
       qualifications: [
         "Cost Accountant",
