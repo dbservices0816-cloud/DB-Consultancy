@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import DINESH from "../assets/dinesh-bajaj.jpeg";
@@ -12,17 +13,18 @@ const Leadership = () => {
       image: DINESH,
       name: "Dinesh C. Bajaj",
       role: "Founder & Principal Consultant",
+      linkedin:
+        "https://www.linkedin.com/in/dc-bajaj-msc-mtech-fcma-3a3679a3/",
       qualifications: [
         "FCMA",
         "CPFA (UK)",
         "MSc Finance (Strathclyde)",
         "MTech (IT)",
-        "AI Skilled"
+        "AI Skilled",
       ],
       points: [
         "Former Chief Adviser (Cost), Ministry of Finance (Secretary / HAG+ Level)",
-        "Pharmaceuticals & Healthcare , Higher Education , Project Construction ,Infrastructure & Development  (Retd)",
-
+        "Pharmaceuticals & Healthcare, Higher Education, Project Construction, Infrastructure & Development (Retd)",
         "Former President, Institute of Cost Accountants of India (ICAI)",
         "Former Member, Airports Economic Regulatory Authority (AERA)",
         "Specialist in Regulatory Tariff Pricing & Defence Procurements",
@@ -64,8 +66,8 @@ const Leadership = () => {
         "Specialist in US GAAP / IGAAP Reporting & Corporate Strategy",
       ],
     },
-    {
 
+    {
       image: NK,
       name: "CMA Narender Kumar Bhola",
       role: "Strategic Advisor – Corporate Law & IBC",
@@ -73,7 +75,7 @@ const Leadership = () => {
         "B.Com (Hons.)",
         "LL.B.",
         "FCMA",
-        "Associate Diploma in General Insurance"
+        "Associate Diploma in General Insurance",
       ],
       points: [
         "Former Technical Member, National Company Law Tribunal (NCLT), Hyderabad & New Delhi",
@@ -83,9 +85,10 @@ const Leadership = () => {
         "6+ Years of Experience in Corporate Fraud Investigations",
         "Former Registrar of Companies with 5+ Years of Experience",
         "Expertise in Insolvency & Bankruptcy Code (IBC), Corporate Liquidation, Mergers & Amalgamations",
-        "Experienced in Companies Act, 2013 / Companies Act, 1956 and Corporate Law Matters"
-      ]
+        "Experienced in Companies Act, 2013 / Companies Act, 1956 and Corporate Law Matters",
+      ],
     },
+
     {
       image: IP,
       name: "FCMAFCS IP Jai Kishan Teotia",
@@ -96,7 +99,7 @@ const Leadership = () => {
         "B.Tech",
         "FCMA",
         "FCS",
-        "Insolvency Professional (IP)"
+        "Insolvency Professional (IP)",
       ],
       points: [
         "40+ Years of Diverse Experience in Forensic Audits, Serious Fraud Investigation, Cost Evaluation & Cost Strategy Planning",
@@ -104,17 +107,18 @@ const Leadership = () => {
         "Former Additional Director – Forensic Audit, Ministry of Corporate Affairs, Serious Fraud Investigation Office (SFIO)",
         "Worked for 7 Years as Additional Director – Forensic Audit at SFIO",
         "Head of the Satyam Case Investigation at SFIO",
-        "Qualified Insolvency Professional"
-      ]
+        "Qualified Insolvency Professional",
+      ],
     },
+
     {
       image: "https://dprasad.in/assets/deepika-prasad-Ec7LS7Qu.jpg",
       name: "CMA. Deepika Bhugra Prasad",
-       role: "Recognised as a leading woman Insolvency Professional in India",
+      role: "Recognised as a leading woman Insolvency Professional in India",
       qualifications: [
         "Cost Accountant",
         "Insolvency Professional",
-        "CMA"
+        "CMA",
       ],
       points: [
         "Founder & Managing Partner at D Prasad Advisory LLP",
@@ -124,8 +128,8 @@ const Leadership = () => {
         "Experience across complex Corporate Insolvency Resolution Process (CIRP) assignments",
         "Contributed to the World Bank's Ease of Doing Business Project",
         "Experience in Forensic Data Analysis for the National Investigation Agency (NIA), Government of India",
-        "Operates across Delhi and Gurgaon"
-      ]
+        "Operates across Delhi and Gurgaon",
+      ],
     },
   ];
 
@@ -154,77 +158,93 @@ const Leadership = () => {
 
         {/* Consultant Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {consultants.map((consultant) => (
-            <div
-              key={consultant.name}
-              className="flex flex-col justify-between overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="p-6">
+          {consultants.map((consultant) => {
+            const card = (
+              <div
+                className="flex h-full flex-col justify-between overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="p-6">
 
-                {/* Profile Image */}
-                <div className="mb-5 flex justify-center">
-                  <div className="h-50 w-40 overflow-hidden rounded-none border-4 border-yellow-500 bg-slate-100 shadow-md">
-                    <img
-                      src={consultant.image}
-                      alt={consultant.name}
-                      className="h-full w-full object-cover"
-                    />
+                  {/* Profile Image */}
+                  <div className="mb-5 flex justify-center">
+                    <div className="h-50 w-40 overflow-hidden rounded-none border-4 border-yellow-500 bg-slate-100 shadow-md">
+                      <img
+                        src={consultant.image}
+                        alt={consultant.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                   </div>
+
+                  {/* Name */}
+                  <h3 className="text-center text-xl font-bold text-slate-900">
+                    {consultant.name}
+                  </h3>
+
+                  {/* Role */}
+                  <p className="mt-1 text-center text-xs font-semibold uppercase text-yellow-600">
+                    {consultant.role}
+                  </p>
+
+                  {/* Qualifications */}
+                  <div className="mt-4 flex flex-wrap justify-center gap-1.5 text-[11px] font-medium text-slate-600">
+                    {consultant.qualifications.map((qualification) => (
+                      <span
+                        key={qualification}
+                        className="rounded bg-slate-100 px-2 py-1"
+                      >
+                        {qualification}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Experience Points */}
+                  <ul className="mt-6 space-y-3">
+                    {consultant.points.map((point, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-xs leading-relaxed text-slate-600 sm:text-sm"
+                      >
+                        <span className="mt-0.5 text-yellow-600">▪</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                {/* Name */}
-                <h3 className="text-center text-xl font-bold text-slate-900">
-                  {consultant.name}
-                </h3>
-
-                {/* Role */}
-                <p className="mt-1 text-center text-xs font-semibold uppercase text-yellow-600">
-                  {consultant.role}
-                </p>
-
-                {/* Qualifications */}
-                <div className="mt-4 flex flex-wrap justify-center gap-1.5 text-[11px] font-medium text-slate-600">
-                  {consultant.qualifications.map((qualification) => (
-                    <span
-                      key={qualification}
-                      className="rounded bg-slate-100 px-2 py-1"
-                    >
-                      {qualification}
-                    </span>
-                  ))}
+                {/* CTA */}
+                <div className="border-t border-slate-200 p-6">
+                  <a
+                    href="/contact"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center text-sm font-bold text-slate-900 transition hover:text-yellow-600"
+                  >
+                    Consult with {consultant.name}
+                    <span className="ml-2 text-yellow-600">→</span>
+                  </a>
                 </div>
-
-                {/* Experience Points */}
-                <ul className="mt-6 space-y-3">
-                  {consultant.points.map((point, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-2 text-xs leading-relaxed text-slate-600 sm:text-sm"
-                    >
-                      <span className="mt-0.5 text-yellow-600">▪</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
+            );
 
-              {/* CTA */}
-              <div className="border-t border-slate-200 p-6">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center text-sm font-bold text-slate-900 transition hover:text-yellow-600"
-                >
-                  Consult with {consultant.name}
-
-                  <span className="ml-2 text-yellow-600">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          ))}
+            // Only Dinesh C. Bajaj card will open LinkedIn
+            return consultant.linkedin ? (
+              <a
+                key={consultant.name}
+                href={consultant.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${consultant.name}'s LinkedIn profile`}
+                className="block h-full cursor-pointer"
+              >
+                {card}
+              </a>
+            ) : (
+              <React.Fragment key={consultant.name}>
+                {card}
+              </React.Fragment>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
